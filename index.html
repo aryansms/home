@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>aryan's stuff</title>
+<link rel="icon" href="aryansstuff.ico" type="image/x-icon">
+<!-- Import Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap">
+<style>
+    /* Styling for better visualization */
+    body {
+        font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section {
+        height: 100vh; /* Set the height of each section to cover the entire viewport */
+        border: 1px solid #ccc;
+        font-size: 24px;
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        padding: 20px; /* Add padding for better spacing */
+        box-sizing: border-box; /* Include padding in element's total width and height */
+        text-align: center; /* Center text horizontally */
+    }
+
+    /* Styling for the navigation */
+    .navbar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        background-color: #f0f0f0; /* Background color of the navigation */
+        border-right: 1px solid #ccc; /* Separator line */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 10px; /* Padding for the navigation links */
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: #333;
+        padding: 10px;
+        margin-bottom: 10px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-link:hover {
+        background-color: #ddd; /* Hover background color */
+    }
+
+    /* Button styling */
+    #openFormBtn {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    #openFormBtn:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+    <div class="section" id="section1">
+        <h1>welcome!</h1>
+        <h2>why this exists</h2>
+        <p>i have a few resources that i think i wanna share with people. these include:</p>
+            <li>web proxy (bypass school filter)</li>
+            <li>blooket gui (self explanatory. might not work everywhere tho)</li>
+            <li>a place to upload quizlets (may not be very well maintained but hey)</li>
+    </div>  
+
+<div class="section" id="section2">
+    <h1>quizlet uploads</h1>
+    <p>as i go, i'm probably gonna progressively add more here. check out the google form if you have any quizlets to upload!</p>
+    <!-- Button to toggle the form visibility -->
+    <button id="openFormBtn" onclick="toggleForm()">submit quizlets</button>
+
+    <!-- Embed the Google Form link in an iframe -->
+    <iframe id="reportForm" src="https://docs.google.com/forms/d/e/1FAIpQLSfHA-hiBjLXLfl0ULpulX45RrZHN-14jkMvmcFJY60_heMsMg/viewform?embedded=true" width="640" height="765" frameborder="0" marginheight="0" marginwidth="0" style="display: none;">Loading…</iframe>
+</div>
+
+<div class="section" id="section3">
+    <h1>blooket hacks</h1>
+    <h2>now we're starting to get into the juicy stuff.</h2>
+    <p>the code is like... pretty huge so im gonna try helping y'all out in using it</p>
+    <i><p>i do not own this</p></i>
+    <a href="javascript:(function(){var script=document.createElement('script');script.src='hax.js';document.body.appendChild(script);})();">Drag to Bookmarks Bar</a>
+</div>
+
+<div class="section" id="section4">
+    Section 4
+</div>
+
+<div class="navbar">
+    <a href="#section1" class="nav-link" onclick="smoothScroll('section1')">hi</a>
+    <a href="#section2" class="nav-link" onclick="smoothScroll('section2')">quizlet uploads</a>
+    <a href="#section3" class="nav-link" onclick="smoothScroll('section3')">blooket hacks</a>
+    <a href="#section4" class="nav-link" onclick="smoothScroll('section4')">web proxy 🤤</a>
+</div>
+
+<script>
+    function toggleForm() {
+        var form = document.getElementById('reportForm');
+        var button = document.getElementById('openFormBtn');
+
+        form.style.display = (form.style.display === 'none') ? 'block' : 'none';
+        button.style.transform = (form.style.display === 'none') ? 'scale(1)' : 'scale(1.1)';
+    }
+
+    function smoothScroll(targetId) {
+        var targetSection = document.getElementById(targetId);
+        window.scrollTo({
+            top: targetSection.offsetTop,
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+</body>
+</html>
