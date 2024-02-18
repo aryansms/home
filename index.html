@@ -39,11 +39,12 @@
         left: 0;
         top: 0;
         background-color: #f0f0f0; /* Background color of the navigation */
-        border-right: 1px solid #ccc; /* Separator line */
+        border-right: 1px solid #000000; /* Separator line */
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding-right: 10px; /* Padding for the navigation links */
+        transition: transform 0.3s; /* Add transition for smooth animation */
     }
 
     .nav-link {
@@ -93,7 +94,7 @@
     }
     .issues {
     position: fixed;
-    bottom: 50px;
+    bottom: 60px;
     right: 10px; /* Adjusted to place the element in the bottom right corner */
     }
 
@@ -109,6 +110,25 @@
 
     .issues .nav-link:hover {
     background-color: #ddd; /* Change background color on hover */
+    }
+
+    /* Style for close button */
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 1; /* Ensure the button appears above the navbar */
+    }
+
+    .close-btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Shift navbar to the left when closed */
+    .navbar-closed {
+        transform: translateX(-70%);
     }
 </style>
 </head>
@@ -159,7 +179,7 @@
     <p>(something you could theoretically do with the blooket gui above though).</p>
     <p>i just thought it would be really cool to put something like this here, because i know a lot of people,</p>
     <p>including myself, hate this stupid filter the school puts on us.</p>
-    <iframe src="https://replit.com/@aryansstuff/Unblocked-Browser-2-1?embed=true" width="100%" height="600"></iframe>
+    <iframe src="https://replit.com/@5929001009/Unblocked-Browser-2?embed=true" width="100%" height="600"></iframe>
 </div>
 
 <div class="section" id="section5">
@@ -171,22 +191,45 @@
     <i><p>if it says this is not the page you're looking for just redo it</p></i>
     <p>now open up the forked file and at the top press run</p>
     <p>now just spam the refresh button that will pop up in the "output" window</p>
-    <i></i><p>remember this is pretty slow so itll take a while to load but trust me it'll work at some point</p></i>
     <p>and have fun</p>
     <i><h2>credits to MarshallGuillor on Replit</h2></i>
+</div>
+
+<div class="section" id="section6">
+    <h1>update log</h1>
+    <h3>1.0</h3>
+        <li>release</li>
+        <li>added blooket hacks, web proxy, quizlet uploads, title page</li>
+    <div>
+    <h3>1.1</h3>
+        <li>fixed website format</li>
+        <li>questions/concerns button</li>
+        <li>quality of life features</li>
+        <li>website can be opened on mobile!</li>
+     <div>
+        <h3>version 1.11</h3>
+            <li>added a way to hide navbar as per request</li>
+            <li>added a cool emoji for the update log</li>
+        </div>
+    </div>
 </div>
 
 <div class="issues">
     <a href="https://raw.githubusercontent.com/aryansms/home/main/questionsconcerns.txt" class="nav-link" onclick="smoothScroll('section1')">Questions/Concerns?</a>
 </div>
-<div class="version">version 1.1 💘 (beta)</div>
+<div class="version">version 1.11 (beta) <span><img src="aryanpog.png" alt="" style="width: 20px; height: 20px;"></span></div>
 
-<div class="navbar">
+
+<div class="navbar" id="navbar">
     <a href="#section1" class="nav-link" onclick="smoothScroll('section1')">hi</a>
     <a href="#section2" class="nav-link" onclick="smoothScroll('section2')">quizlet uploads</a>
     <a href="#section3" class="nav-link" onclick="smoothScroll('section3')">blooket hacks</a>
     <a href="#section4" class="nav-link" onclick="smoothScroll('section4')">web proxy 🤤</a>
     <a href="#section5" class="nav-link" onclick="smoothScroll('section5')">web proxy directions</a>
+    <a href="#section6" class="nav-link" onclick="smoothScroll('section6')">update log 💖</a>
+    <div class="close-btn" onclick="toggleNavbar()">
+        <img src="https://twemoji.maxcdn.com/v/latest/svg/274c.svg" alt="Close" width="30" height="30">
+    </div>
 </div>
 
 <script>
@@ -196,6 +239,11 @@
 
         form.style.display = (form.style.display === 'none') ? 'block' : 'none';
         button.style.transform = (form.style.display === 'none') ? 'scale(1)' : 'scale(1.1)';
+    }
+
+    function toggleNavbar() {
+        var navbar = document.getElementById('navbar');
+        navbar.classList.toggle('navbar-closed');
     }
 
     function smoothScroll(targetId) {
