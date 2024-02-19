@@ -116,7 +116,7 @@
     .close-btn {
         position: absolute;
         top: 10px;
-        right: 10px;
+        right: -40px;
         cursor: pointer;
         z-index: 1; /* Ensure the button appears above the navbar */
     }
@@ -128,7 +128,7 @@
 
     /* Shift navbar to the left when closed */
     .navbar-closed {
-        transform: translateX(-70%);
+        transform: translateX(-100%);
     }
 </style>
 </head>
@@ -196,6 +196,18 @@
 </div>
 
 <div class="section" id="section6">
+    <h1>HTML Games</h1>
+    <p>you get the drill, have fun</p>
+<a href="https://sites.google.com/view/learning-topia/home">heres a site, may add more soon</a>
+</div>
+
+
+
+<div class="issues">
+    <a href="https://raw.githubusercontent.com/aryansms/home/main/questionsconcerns.txt" class="nav-link" onclick="smoothScroll('section1')">Questions/Concerns?</a>
+</div>
+
+<div class="section" id="section7">
     <h1>update log</h1>
     <h3>1.0</h3>
         <li>release</li>
@@ -211,8 +223,14 @@
             <li>added a way to hide navbar as per request</li>
             <li>added a cool emoji for the update log</li>
         </div>
+    <div>
+        <h3>version 1.12</h3>
+        <li>added an unblocked games section (may be added to soon)</li>
+        <li>fixed the button that closes up the navigation bar</li>
+        </div>
     </div>
 </div>
+
 
 <div class="issues">
     <a href="https://raw.githubusercontent.com/aryansms/home/main/questionsconcerns.txt" class="nav-link" onclick="smoothScroll('section1')">Questions/Concerns?</a>
@@ -221,14 +239,15 @@
 
 
 <div class="navbar" id="navbar">
-    <a href="#section1" class="nav-link" onclick="smoothScroll('section1')">hi</a>
+    <a href="#section1" class="nav-link" onclick="smoothScroll('section1')">hi 💥</a>
     <a href="#section2" class="nav-link" onclick="smoothScroll('section2')">quizlet uploads</a>
-    <a href="#section3" class="nav-link" onclick="smoothScroll('section3')">blooket hacks</a>
+    <a href="#section3" class="nav-link" onclick="smoothScroll('section3')">blooket hacks 🗣️🔥</a>
     <a href="#section4" class="nav-link" onclick="smoothScroll('section4')">web proxy 🤤</a>
     <a href="#section5" class="nav-link" onclick="smoothScroll('section5')">web proxy directions</a>
-    <a href="#section6" class="nav-link" onclick="smoothScroll('section6')">update log 💖</a>
+    <a href="#section6" class="nav-link" onclick="smoothScroll('section6')">games 🎮</a>
+    <a href="#section7" class="nav-link" onclick="smoothScroll('section7')">update log 💖</a>
     <div class="close-btn" onclick="toggleNavbar()">
-        <img src="https://twemoji.maxcdn.com/v/latest/svg/274c.svg" alt="Close" width="30" height="30">
+        <img src="close.png" alt="Close" width="30" height="30">
     </div>
 </div>
 
@@ -253,7 +272,30 @@
             behavior: 'smooth'
         });
     }
+
+        function toggleForm() {
+            var form = document.getElementById('reportForm');
+            var button = document.getElementById('openFormBtn');
+
+            form.style.display = (form.style.display === 'none') ? 'block' : 'none';
+            button.style.transform = (form.style.display === 'none') ? 'scale(1)' : 'scale(1.1)';
+        }
+
+        function toggleNavbar() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('navbar-closed');
+        }
+
+        function smoothScroll(targetId) {
+            var targetSection = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
 </script>
 
 </body>
 </html>
+
+
